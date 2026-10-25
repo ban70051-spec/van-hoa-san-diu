@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khám phá văn hóa dân tộc Sán Dìu</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            background-color: #f8f5ef;
+            color: #333;
+        }
+
+        header {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+                url('https://uploads.onecompiler.io/4575h23zq/1792857276992/850097030_1669219378124254_1297193568680366135_n.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 140px 20px;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        nav {
+            background-color: #2f80d1;
+            text-align: center;
+            padding: 14px 10px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px #00000030;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #ffe08a;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 6px solid #b75d3b;
+            box-shadow: 0 3px 12px #00000010;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000010;
+            scroll-margin-top: 75px;
+        }
+
+        h2 {
+            color: #853b2b;
+            border-bottom: 2px solid #e6c8a7;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+
+        h3 {
+            color: #a45a36;
+            margin: 18px 0 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        ul {
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            background: #fff2df;
+            padding: 16px;
+            border-radius: 8px;
+            border-left: 4px solid #c47a43;
+            margin-top: 15px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #6c4639;
+            background: #faf0e5;
+            padding: 18px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+                url('https://uploads.onecompiler.io/4575h23zq/1792857315643/861175051_1392262396310509_3631038237539453883_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: #542820;
+            color: white;
+            text-align: center;
+            padding: 100px 15px;
+            min-height: 300px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer p {
+            text-align: center;
+            margin: 5px 0;
+        }
+        footer p,
+        footer .top-button {
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .top-button {
+            display: inline-block;
+            margin-top: 15px;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 7px 15px;
+            border-radius: 6px;
+        }
+
+        .top-button:hover {
+            background: white;
+            color: #542820;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav {
+                position: static;
+            }
+
+            nav a {
+                margin: 5px 7px;
+                font-size: 14px;
+            }
+
+            section {
+                padding: 20px;
+            }
+        }
+                .noi-dung-anh {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .noi-dung-anh p {
+            flex: 1;
+        }
+
+        .noi-dung-anh img {
+            width: 320px;
+            max-width: 40%;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000030;
+            object-fit: cover;
+        }
+
+        @media (max-width: 600px) {
+            .noi-dung-anh {
+                flex-direction: column;
+            }
+
+            .noi-dung-anh img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+            .video-wrap {
+                position: relative;
+                aspect-ratio: 16 / 9;
+                margin-top: 20px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 3px 12px #00000030;
+        }
+
+            .video-wrap iframe {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+        }
+            .noi-dung-anh img {
+                width: 450px;
+                max-width: 50%;
+            }
+
+            .anh-cot {
+                width: 450px;
+                max-width: 50%;
+            }
+
+            .anh-cot img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+            } 
+
+        @media (max-width: 600px) {
+            .noi-dung-anh img,
+            .anh-cot {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+                .thu-vien {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .thu-vien img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000030;
+            cursor: zoom-in;
+        }
+
+        @media (max-width: 600px) {
+            .thu-vien {
+                grid-template-columns: 1fr;
+            }
+        }
+                .thu-vien {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .thu-vien img {
+            flex: 1;
+            min-width: 0;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000030;
+            cursor: zoom-in;
+        }
+
+        @media (max-width: 600px) {
+            .thu-vien {
+                gap: 8px;
+            }
+        }
+            .chu { flex: 1; }
+        
+            .video-hang {
+                display: grid;
+                grid-template-columns: repeat(2, 2fr);
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .video-hang .video-wrap {
+                margin-top: 0;
+            }
+
+            @media (max-width: 600px) {
+                .video-hang {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .video-hang .video-wrap {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+@media (hover: hover) {
+    .video-hang .video-wrap:hover {
+        transform: scale(1.1);
+        z-index: 5;
+        box-shadow: 0 8px 30px #00000060;
+    }
+}
+
+    .video-hang .video-wrap:first-child { transform-origin: left center; }
+    .video-hang .video-wrap:last-child { transform-origin: right center; }
+
+    .video-hang .video-wrap iframe {
+        width: 200%;
+        height: 200%;
+        transform: scale(0.5);
+        transform-origin: 0 0;
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <header id="top">
+        <h1>KHÁM PHÁ DÂN TỘC SÁN DÌU</h1>
+        <p>Nét đẹp văn hóa, phong tục và truyền thống của người Sán Dìu</p>
+    </header>
+
+    <nav>
+        <a href="#ngon-ngu">Ngôn ngữ</a>
+        <a href="#cu-tru">Cư trú</a>
+        <a href="#lich-su">Lịch sử</a>
+        <a href="#trang-*****">Trang phục</a>
+        <a href="#cuoi-xin">Cưới xin</a>
+        <a href="#ma-chay">Ma chay</a>
+        <a href="#le-tet">Lễ Tết</a>
+        <a href="#van-hoa">Văn hóa</a>
+        <a href="#dai-phan">Lễ hội Đại Phan</a>
+    </nav>
+
+    <main class="container">
+
+        <div class="intro">
+            <h2>Giới thiệu chung</h2>
+            <p>
+                Người Sán Dìu là một trong 53 dân tộc thiểu số ở Việt Nam,
+                có đời sống văn hóa phong phú với nhiều phong tục, tập quán
+                truyền thống độc đáo. Những nét văn hóa ấy được thể hiện qua
+                trang phục, nghi lễ cưới xin, ma chay, lễ Tết và đặc biệt
+                là làn điệu dân ca Soọng cô.
+            </p>
+            <p>
+                Việc tìm hiểu văn hóa dân tộc Sán Dìu góp phần nâng cao
+                nhận thức về sự đa dạng văn hóa và ý nghĩa của việc bảo tồn
+                các giá trị truyền thống của cộng đồng các dân tộc Việt Nam.
+            </p>
+        </div>
+
+        <section id="ngon-ngu">
+            <h2>1. Ngôn ngữ</h2>
+            <div class="noi-dung-anh">
+                <div class="chu">
+                    <p>
+                        Người Sán Dìu là một trong những dân tộc thiểu số ở nước ta,
+                        sử dụng ngôn ngữ thuộc nhóm Hán - Tạng. Trong quá trình
+                        sinh sống lâu đời bên cạnh người Hán phương Nam, người
+                        Sán Dìu đã có sự giao lưu và tiếp thu thổ ngữ Hán Quảng Đông.
+                    </p>
+                </div>
+                <img src="https://uploads.onecompiler.io/4575h23zq/1792859325061/f4a4fd05-b2b1-409c-ab22-22f32b3b25a6.jpg" alt="Người Sán Dìu">
+            </div>
+        </section>
+
+        <section id="cu-tru">
+            <h2>2. Địa bàn cư trú</h2>
+            <p>
+                Người Sán Dìu cư trú tập trung tại một số tỉnh, thành phố
+                như Thái Nguyên, Vĩnh Phúc, Bắc Giang, Quảng Ninh,
+                Tuyên Quang và Hải Dương.
+            </p>
+            <p>
+                Họ thường sinh sống thành những chòm, xóm riêng hoặc
+                cư trú xen kẽ với người Hoa, người Kinh, người Tày,
+                người Nùng và các dân tộc khác tại địa phương.
+            </p>
+            <div class="highlight">
+                <strong>Đặc điểm:</strong> Sự giao lưu giữa các cộng đồng
+                góp phần tạo nên đời sống văn hóa đa dạng, vừa giữ gìn
+                bản sắc riêng vừa tiếp thu những nét văn hóa của các dân tộc
+                cùng sinh sống.
+            </div>
+        </section>
+
+        <section id="lich-su">
+            <h2>3. Nguồn gốc và lịch sử</h2>
+            <p>
+                Về nguồn gốc dân tộc, tên tự nhận là Sơn Dao gợi mở
+                nhiều suy nghĩ về lịch sử hình thành cộng đồng Sán Dìu.
+                Nhà nghiên cứu Ma Khánh Bằng từng phỏng đoán rằng
+                người Sán Dìu có nguồn gốc từ người Dao.
+            </p>
+            <p>
+                Theo giả thuyết này, trong quá khứ, một bộ phận người Dao
+                chịu sự thống trị và đàn áp của các thế lực phong kiến
+                Trung Quốc, phải di cư đến nhiều nơi để sinh sống,
+                mưu sinh và phát triển cộng đồng. Người Sán Dìu được
+                cho là một trong những nhóm người có liên quan đến
+                quá trình di cư đó.
+            </p>
+                <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/qZvc46BqxAA?si=hhuoU_7vJkmbzrGX"
+                    title="Video về nguồn gốc và lịch sử dân tộc Sán Dìu"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="trang-*****">
+            <h2>4. Trang phục truyền thống</h2>
+
+            <h3>Trang phục phụ nữ</h3>
+            <div class="noi-dung-anh">
+                <div class="chu">
+                    <p>
+                        Trang phục truyền thống của phụ nữ Sán Dìu có nhiều
+                        chi tiết đặc sắc, thể hiện nét đẹp kín đáo và sự khéo léo
+                        trong cách phối hợp màu sắc.
+                    </p>
+                    <ul>
+                        <li>Khăn đội đầu màu đen.</li>
+                        <li>Áo dài một lớp hoặc hai lớp; áo trong thường màu trắng,
+                            áo ngoài màu chàm.</li>
+                        <li>Yếm màu đỏ.</li>
+                        <li>Thắt lưng màu trắng, hồng hoặc xanh lơ.</li>
+                        <li>Váy màu chàm, dài quá đầu gối.</li>
+                        <li>Xà cạp dùng trong trang phục truyền thống.</li>
+                        <li>Đồ trang sức gồm vòng cổ, vòng tay, hoa tai và
+                            dây xà tích bằng bạc.</li>
+                    </ul>
+                </div>
+
+                <div class="anh-cot">
+                    <img src="https://uploads.onecompiler.io/4575h23zq/1792857306550/849224302_1088289060640508_339118020525466075_n.jpg" alt="Trang phục phụ nữ Sán Dìu">
+                    <img src="https://uploads.onecompiler.io/4575h23zq/1792860234386/c79e20a0-39a1-440e-9320-7cd63adbcec2.jpg" alt="Trang phục phụ nữ Sán Dìu 2">
+                </div>
+            </div>
+
+
+                        <h3>Trang phục nam giới</h3>
+            <div class="noi-dung-anh">
+                <div class="chu">
+                    <p>
+                        Trước đây, nam giới Sán Dìu thường mặc áo năm thân,
+                        áo trong màu trắng và áo ngoài màu đen. Áo có cổ cài
+                        khuy bên phải, dài quá gối và tay áo hẹp. Họ có thể
+                        búi tóc, vấn khăn hoặc đội khăn xếp, kết hợp với quần trắng.
+                    </p>
+                    <p>
+                        Ngày nay, trang phục thường ngày của nam giới đã thay đổi,
+                        phổ biến với quần âu, áo sơ mi, giày da và dép nhựa,
+                        tương tự trang phục của người Kinh.
+                    </p>
+                </div>
+
+                <img src="https://uploads.onecompiler.io/4575h23zq/1792860793530/0ed8cca3-b6d6-4c94-a3a4-204ce38c38b7.jpg" alt="Trang phục nam giới Sán Dìu">
+            </div>
+        </section>
+
+                <section id="cuoi-xin">
+            <h2>5. Phong tục cưới xin</h2>
+            <p>
+                Trong phong tục cưới hỏi truyền thống của người Sán Dìu,
+                việc xem tuổi có vai trò quan trọng. Người ta dựa vào
+                thuyết ngũ hành để xem tuổi của đôi trai gái có phù hợp
+                hay không.
+            </p>
+
+            <h3>Lễ xem tuổi và ăn hỏi</h3>
+            <p>
+                Nếu tuổi đôi trai gái được xem là hợp, ông mối sẽ báo
+                cho nhà gái biết việc xem lá số đã thành công bằng một
+                lễ nhỏ gồm nải chuối, 10 lá trầu và 10 quả cau.
+                Sau khoảng 10 ngày, nếu nhà gái không đồng ý thì đem
+                lễ vật trả lại nhà trai; nếu đồng ý thì không có ý kiến gì.
+            </p>
+            <p>
+                Sau đó, đôi trai gái có thể tự do đi lại tìm hiểu nhau.
+                Ông mối tiếp tục trao đổi với hai gia đình và thông báo
+                cho nhà trai chuẩn bị lễ ăn hỏi.
+            </p>
+
+            <h3>Lễ cưới truyền thống</h3>
+            <p>
+                Đám cưới của người Sán Dìu thường diễn ra trong ba ngày.
+                Trước ngày cưới từ 15 đến 20 ngày, nhà trai chọn ngày tốt
+                và chuẩn bị các vật dụng cần thiết như rọ lợn, lồng gà
+                đan bằng tre.
+            </p>
+            <p>
+                Trong lễ cưới, đại diện hai gia đình thể hiện sự đồng thuận,
+                chúc phúc cho đôi vợ chồng trẻ và mong muốn hai người
+                xây dựng cuộc sống gia đình hạnh phúc.
+            </p>
+
+            <div class="thu-vien">
+                <img src="https://uploads.onecompiler.io/4575h23zq/1792861012055/ca9415eb-b75c-4f42-8bf2-020d9c3c7fb7.jpg" alt="Lễ cưới Sán Dìu 1">
+                <img src="https://uploads.onecompiler.io/4575h23zq/1792861005540/08757d7e-2dc3-4d30-8789-4f6b3cb43a00.jpg" alt="Lễ cưới Sán Dìu 2">
+                <img src="https://uploads.onecompiler.io/4575h23zq/1792860988988/4019cdce-242a-47e8-a756-bfe95cc43fd8.jpg" alt="Lễ cưới Sán Dìu 3">
+            </div>
+
+            <div class="quote">
+                Đám cưới của người Sán Dìu không chỉ là sinh hoạt văn hóa,
+                tinh thần mà còn thể hiện tình cảm, đạo đức, lối sống
+                và phép ứng xử giữa con người với con người,
+                giữa con người với thiên nhiên.
+            </div>
+        </section>
+
+        <section id="ma-chay">
+    <h2>6. Phong tục ma chay</h2>
+
+    <div class="noi-dung-anh">
+        <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e14a69be-109e-46c9-b32a-77b1bcc8c9fd.jpg" alt="Phong tục ma chay của người Sán Dìu 1">
+        <div class="chu">
+            <p>
+                Trong tang lễ truyền thống của người Sán Dìu có nhiều
+                nghi thức mang ý nghĩa tâm linh, gắn với quan niệm về
+                sự sống, cái chết, gia đình và sự sinh sôi của vật nuôi.
+            </p>
+            <p>
+                Khi hạ huyệt, con cái thực hiện nghi thức bò một vòng
+                quanh miệng huyệt từ phía chân quan tài. Con trai bò
+                từ trái sang phải, con gái bò từ phải sang trái,
+                đồng thời xô đất lấp huyệt.
+            </p>
+        </div>
+    </div>
+
+    <div class="noi-dung-anh" style="margin-top: 25px;">
+        <div class="chu">
+            <p>
+                Sau đó, mỗi người lấy một nắm đất, chạy về nhà và bỏ
+                vào chuồng trâu, chuồng lợn với mong muốn gia súc
+                sinh sôi, nảy nở. Tiếp theo, họ ngồi xuống thúng thóc
+                theo quan niệm người dính nhiều thóc sẽ gặp may mắn.
+            </p>
+            <p>
+                Trong một số nghi thức tiếp theo, mọi người cùng ăn
+                thịt gà luộc. Nhà mồ truyền thống có mái bằng,
+                lợp lá rừng. Khi cải táng, xương được xếp vào tiểu
+                hoặc chum theo tư thế ngồi. Nếu chưa chọn được ngày tốt,
+                người ta có thể chôn tạm ở chân đồi hoặc bờ ruộng.
+            </p>
+        </div>
+        <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/decc6d6d-0669-46db-b546-d59a08a79c37.jpg" alt="Phong tục ma chay của người Sán Dìu 2">
+    </div>
+</section>
+
+        <section id="le-tet">
+    <h2>7. Lễ Tết truyền thống</h2>
+    <p>
+        Người Sán Dìu có nhiều ngày Tết tương tự các dân tộc
+        sinh sống trong cùng khu vực. Trong đó, Tết Đông chí
+        có ý nghĩa đặc biệt, gắn với mong ước gia đình đông con,
+        nhiều cháu và cuộc sống sung túc.
+    </p>
+    <p>
+        Theo phong tục được ghi chép, đối với những cặp vợ chồng
+        đã kết hôn lâu năm nhưng chưa có con, sau Tết người vợ
+        có thể trở về nhà cha mẹ đẻ. Người chồng nhờ ông mối
+        đến hỏi và sau đó tổ chức nghi lễ cưới lại theo quan niệm
+        cầu mong con cái.
+    </p>
+
+    <div class="video-wrap">
+        <iframe src="https://www.youtube.com/embed/JFIo3j644Ew"
+            title="Video về Lễ Tết truyền thống của người Sán Dìu"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+        <section id="van-hoa">
+            <h2>8. Văn hóa dân gian và hát Soọng cô</h2>
+
+            <h3>Thơ ca, âm nhạc và trò chơi dân gian</h3>
+            <p>
+                Kho tàng văn hóa dân gian của người Sán Dìu rất phong phú,
+                bao gồm thơ ca, truyện kể, truyện thơ, âm nhạc và các
+                trò chơi truyền thống.
+                Chuyện cổ tích , truyện kể tiêu biểu : Truyện Quả Bầu, Chàng Rắn, Cặp sừng nai, Tướng Quân cụt đầu, Vua Cóc, Bảy nàng tiên
+            </p>
+            <p>
+                Các nhạc cụ như tù và, kèn, trống, sáo, thanh la và não bạt
+                được sử dụng trong một số hoạt động nghi lễ. Những trò chơi
+                dân gian được yêu thích gồm đi cà kheo, đánh khăng,
+                đánh cầu lông kiểu Sán Dìu và kéo co.
+            </p>
+
+            <div class="thu-vien">
+                <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e17bd724-a02f-4741-8314-c6c5f232d345.jpg" alt="Trò chơi dân gian Sán Dìu 1">
+                <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/20200122144217-55.jpg" alt="Trò chơi dân gian Sán Dìu 2">
+            </div>
+
+            <h3>Hát Soọng cô</h3>
+            <p>
+                Hát Soọng cô là một thể loại dân ca trữ tình đặc sắc,
+                gắn liền với đời sống tinh thần của người Sán Dìu,
+                trong đó có cộng đồng người Sán Dìu ở tỉnh Tuyên Quang.
+            </p>
+            <p>
+                Theo truyền thuyết về Truyện quả bầu, thuở xa xưa,
+                một trận lụt lớn khiến muôn loài chết chóc. Hai chị em
+                trong một ngôi làng may mắn sống sót nhờ chui vào
+                quả bầu khô. Sau khi nước rút, họ sinh con cháu,
+                làm cho cộng đồng người Sán Dìu hồi sinh.
+            </p>
+            <p>
+                Vì con cháu trong cùng một làng có quan hệ huyết thống,
+                họ phải tìm bạn đời ở làng khác. Để bày tỏ tình cảm,
+                người trẻ dùng tiếng hát diễn tả lòng mình. Truyền thuyết
+                kể rằng hát Soọng cô ra đời từ đó và được lưu truyền
+                đến ngày nay.
+            </p>
+
+            <div class="thu-vien">
+        <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/a5dd130a-1928-4050-a761-a6e3bbaef6bf.jpg" alt="Văn hóa dân gian Sán Dìu 1">
+        <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/0acfd4dc-eb6f-47b7-bc7a-ea4ebe6e1982.jpg" alt="Văn hóa dân gian Sán Dìu 2">
+    </div>
+
+            <h3>Đặc điểm của hát Soọng cô</h3>
+            <ul>
+                <li>Gắn với sinh hoạt đời thường, lao động sản xuất.</li>
+                <li>Được trình diễn trong lễ hội và lễ cưới.</li>
+                <li>Có hình thức hát đối đáp giữa nam và nữ.</li>
+                <li>Đòi hỏi người hát phải nhanh trí, thông minh,
+                    hiểu biết và giỏi ứng khẩu.</li>
+                <li>Lời ca có thể được sáng tác linh hoạt theo hoàn cảnh
+                    hoặc tuân theo những giai điệu truyền thống.</li>
+            </ul>
+
+            <h3>Bảo tồn và phát huy giá trị văn hóa</h3>
+            <p>
+                Để bảo tồn và phổ biến làn điệu Soọng cô, tỉnh Tuyên Quang
+                khuyến khích thành lập các đội văn nghệ quần chúng,
+                sưu tầm và dàn dựng các tiết mục, đồng thời đưa làn điệu
+                này vào những chương trình biểu diễn văn hóa, nghệ thuật.
+            </p>
+            <p>
+                Những hoạt động đó góp phần gìn giữ bản sắc văn hóa,
+                truyền lại giá trị truyền thống cho thế hệ trẻ và
+                quảng bá nét đẹp văn hóa của dân tộc Sán Dìu.
+            </p>
+
+            <div class="highlight">
+                <strong>Giá trị nổi bật:</strong> Hát Soọng cô là một
+                biểu hiện tiêu biểu của đời sống tinh thần người Sán Dìu,
+                thể hiện tình yêu đôi lứa, sự giao lưu cộng đồng
+                và khả năng sáng tạo nghệ thuật dân gian.
+            </div>
+        </section>
+
+            <section id="dai-phan">
+                <h2>9. Lễ hội Đại Phan</h2>
+
+                <div class="noi-dung-anh">
+                    <div class="chu">
+                        <p>
+                            Lễ hội Đại Phan là một lễ tục đẹp của cộng đồng người
+                            Sán Dìu (Vân Đồn, Quảng Ninh). Lễ hội được phục dựng
+                            năm 2008 sau lần tổ chức cuối cùng vào năm 1944.
+                        </p>
+                        <p>
+                            Đại Phan là lễ hội của cộng đồng người Sán Dìu, được tổ
+                            chức để cầu mong cho dân làng được an yên, mưa thuận
+                            gió hòa, mùa màng tươi tốt, xua đuổi tà ma...
+                        </p>
+                    </div>
+                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/b285e5a7-9d3a-4059-9f41-b9dfb601797a.jpg" alt="Hội Đại Phan dân tộc Sán Dìu">
+                </div>
+
+                <h3>Các hoạt động chính</h3>
+                <div class="noi-dung-anh">
+                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/c6170c7b-0d50-47ee-ab9d-71a1ef7bbe3d.jpg" alt="Lễ rước thành hoàng làng">
+                    <div class="chu">
+                        <ul>
+                            <li>Lễ rước thành hoàng làng.</li>
+                            <li>Dựng cây phan (cây nêu).</li>
+                            <li>Hát Soọng cô.</li>
+                            <li>Leo gươm.</li>
+                            <li>Lội qua than hồng.</li>
+                            <li>Cấp sớ điệp sắc phong cho thầy cúng.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Điểm nhấn đặc sắc</h3>
+
+                <h3>Lễ leo dao</h3>
+                <div class="noi-dung-anh">
+                    <div class="chu">
+                        <p>
+                            Thầy cúng đi chân trần (được đóng triện đỏ) bước lên
+                            bậc thang gồm 12 lưỡi dao sắc lẹm gắn trên cây âm -
+                            dương mà không bị thương. Nghi lễ nhằm tái hiện truyền
+                            thuyết Vua Cóc, vẩy thóc gạo ban phúc lộc cho dân làng
+                            và cầu nguyện bề trên phù hộ.
+                        </p>
+                    </div>
+                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e6a9a276-94b7-4c4b-8c22-eed7c6f6c60f.jpg" alt="Lễ leo dao">
+                </div>
+
+                <h3>Lội qua than hồng</h3>
+                <div class="noi-dung-anh">
+                    <div class="chu">
+                        <p>
+                            Các thầy cúng bước qua thảm than đỏ rực với đôi chân trần một
+                            cách điệu nghệ mà không bị bỏng, thể hiện nét văn hóa tâm linh
+                            độc đáo, bí truyền của người Sán Dìu.
+                        </p>
+                    </div>
+                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/1c7b71d1-5d09-4524-b9b5-3bb7ce5a1408.jpg" alt="Lội qua than hồng">
+                </div>
+                <div class="highlight">
+                    <strong>Ý nghĩa:</strong> Lễ hội Đại Phan thể hiện đời sống
+                    tâm linh và mong ước bình yên, no ấm của cộng đồng người Sán Dìu.
+                </div>
+            </section>
+
+        <section id="ket-luan">
+            <h2>10. Kết luận</h2>
+            <p>
+                Dân tộc Sán Dìu có một nền văn hóa truyền thống đa dạng,
+                thể hiện qua ngôn ngữ, trang phục, phong tục cưới xin,
+                tang lễ, lễ Tết và kho tàng văn học dân gian.
+                Đặc biệt, hát Soọng cô là nét văn hóa độc đáo,
+                góp phần tạo nên bản sắc riêng của cộng đồng.
+            </p>
+            <p>
+                Tìm hiểu và bảo tồn các giá trị văn hóa của người Sán Dìu
+                không chỉ giúp gìn giữ di sản của một dân tộc mà còn
+                góp phần bảo vệ sự đa dạng văn hóa của Việt Nam.
+            </p>
+        </section>
+
+        <section id="video">
+    <h2>11. Video tham khảo</h2>
+    <p>
+        Một số video giúp bạn tìm hiểu thêm về đời sống và văn hóa
+        của người Sán Dìu.
+    </p>
+
+    <div class="video-hang">
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/_U4B13JBPvI?rel=0&modestbranding=1&iv_load_policy=3"
+                title="Video tham khảo về dân tộc Sán Dìu 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/ETQTTtyvoLE?rel=0&modestbranding=1&iv_load_policy=3"
+                title="Video tham khảo về dân tộc Sán Dìu 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/bX6a5DcnX2k?rel=0&modestbranding=1&iv_load_policy=3"
+                title="Video tham khảo về dân tộc Sán Dìu 3"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/SzRHFpJk6xA?rel=0&modestbranding=1&iv_load_policy=3"
+                title="Video tham khảo về dân tộc Sán Dìu 4"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p><strong>KHÁM PHÁ VĂN HÓA DÂN TỘC SÁN DÌU</strong></p>
+        <p>Gìn giữ bản sắc dân tộc - Phát huy giá trị truyền thống</p>
+        <a href="#top" class="top-button">Trở về đầu trang ↑</a>
+    </footer>
+
+        
+
+</body>
+</html>
