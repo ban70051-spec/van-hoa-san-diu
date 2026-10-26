@@ -23,6 +23,7 @@
 
         body {
             font-family: Arial, sans-serif;
+            font-size: 22px;
             line-height: 1.8;
             background-color: #f8f5ef;
             color: #333;
@@ -69,6 +70,7 @@
             text-decoration: none;
             margin: 0 12px;
             font-weight: bold;
+            font-size: 18px;
             display: inline-block;
         }
 
@@ -202,23 +204,23 @@
                 padding: 20px;
             }
         }
-                .noi-dung-anh {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
+            .noi-dung-anh {
+                display: flex;
+                gap: 25px;
+                align-items: center;
+            }
 
-        .noi-dung-anh p {
-            flex: 1;
-        }
+            .noi-dung-anh p {
+                flex: 1;
+            }
 
-        .noi-dung-anh img {
-            width: 320px;
-            max-width: 40%;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px #00000030;
-            object-fit: cover;
-        }
+            .noi-dung-anh img {
+                width: 320px;
+                max-width: 40%;
+                border-radius: 10px;
+                box-shadow: 0 3px 12px #00000030;
+                object-fit: cover;
+            }
 
         @media (max-width: 600px) {
             .noi-dung-anh {
@@ -269,20 +271,20 @@
                 max-width: 100%;
             }
         }
-                .thu-vien {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
+            .thu-vien {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+                margin: 20px 0;
+            }
 
-        .thu-vien img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 3px 12px #00000030;
-            cursor: zoom-in;
+            .thu-vien img {
+                width: 100%;
+                aspect-ratio: 4 / 3;
+                object-fit: cover;
+                border-radius: 10px;
+                box-shadow: 0 3px 12px #00000030;
+                cursor: zoom-in;
         }
 
         @media (max-width: 600px) {
@@ -290,12 +292,12 @@
                 grid-template-columns: 1fr;
             }
         }
-                .thu-vien {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
+            .thu-vien {
+                display: flex;
+                flex-wrap: nowrap;
+                gap: 15px;
+                margin-top: 20px;
+            }
 
         .thu-vien img {
             flex: 1;
@@ -336,23 +338,197 @@
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-@media (hover: hover) {
-    .video-hang .video-wrap:hover {
-        transform: scale(1.1);
-        z-index: 5;
-        box-shadow: 0 8px 30px #00000060;
+        @media (hover: hover) {
+            .video-hang .video-wrap:hover {
+                transform: scale(1.1);
+                z-index: 5;
+                box-shadow: 0 8px 30px #00000060;
     }
 }
 
-    .video-hang .video-wrap:first-child { transform-origin: left center; }
-    .video-hang .video-wrap:last-child { transform-origin: right center; }
+        .video-hang .video-wrap:first-child { transform-origin: left center; }
+        .video-hang .video-wrap:last-child { transform-origin: right center; }
 
-    .video-hang .video-wrap iframe {
-        width: 200%;
-        height: 200%;
-        transform: scale(0.5);
-        transform-origin: 0 0;
-    }
+        .video-hang .video-wrap iframe {
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            transform-origin: 0 0;
+        }
+
+        #dai-phan p,
+        #dai-phan li,
+        #dai-phan .highlight {
+            font-size: 22px;
+            line-height: 1.9;
+        }
+
+        #dai-phan h3 {
+            font-size: 23px;
+        }
+        #dai-phan,
+        #ket-luan {
+            font-size: 22px;
+        }
+
+        
+        #quiz-content .quiz-option {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 14px;
+            margin: 10px 0;
+            border: 2px solid #e6c8a7;
+            border-radius: 8px;
+            background: #fffaf3;
+            color: #333;
+            font-size: 20px;
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        #quiz-content .quiz-option:hover:not(:disabled) {
+            background: #fff0d9;
+            border-color: #c47a43;
+        }
+
+        #quiz-content .quiz-option:disabled {
+            cursor: default;
+        }
+
+        #quiz-content .quiz-option.correct-answer {
+            background: #d9f2df;
+            border-color: #218838;
+        }
+
+        #quiz-feedback .correct {
+            color: #218838;
+            font-weight: bold;
+        }
+
+        #quiz-feedback .wrong {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        #quiz-progress {
+            font-weight: bold;
+            color: #853b2b;
+            margin: 15px 0;
+        }
+
+        #next-question,
+        #restart-quiz {
+            padding: 12px 22px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 7px;
+            background: #2f80d1;
+            color: white;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        #next-question[hidden],
+        #restart-quiz[hidden] {
+            display: none;
+        }
+
+        #danh-gia {
+            margin-top: 30px;
+        }
+
+        #review-form {
+            margin-top: 20px;
+        }
+
+        #review-form > label {
+            display: block;
+            margin: 15px 0 8px;
+            font-weight: bold;
+        }
+
+        .rating-stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            width: fit-content;
+        }
+
+        .rating-stars input {
+            display: none;
+        }
+
+        .rating-stars label {
+            font-size: 35px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .rating-stars label:hover,
+        .rating-stars label:hover ~ label,
+        .rating-stars input:checked ~ label {
+            color: #ffc107;
+        }
+
+        #review-comment {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font: inherit;
+            resize: vertical;
+        }
+
+        #review-form button {
+            margin-top: 12px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #287a4b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #review-form button:hover {
+            background-color: #1d5d38;
+        }
+
+        #review-message {
+            color: #287a4b;
+            font-weight: bold;
+        }
+
+        #reviews-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .review-card {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: #fff;
+        }
+
+        .review-card p {
+            margin: 6px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .review-card .review-rating {
+            color: #f0ad00;
+            font-size: 23px;
+            letter-spacing: 2px;
+        }
+
+        .review-card small {
+            color: #777;
+        }
 
     </style>
 </head>
@@ -623,179 +799,179 @@
     </div>
 </section>
 
-        <section id="van-hoa">
-            <h2>8. Văn hóa dân gian và hát Soọng cô</h2>
+    <section id="van-hoa">
+        <h2>8. Văn hóa dân gian và hát Soọng cô</h2>
 
-            <h3>Thơ ca, âm nhạc và trò chơi dân gian</h3>
-            <p>
-                Kho tàng văn hóa dân gian của người Sán Dìu rất phong phú,
-                bao gồm thơ ca, truyện kể, truyện thơ, âm nhạc và các
-                trò chơi truyền thống.
-                Chuyện cổ tích , truyện kể tiêu biểu : Truyện Quả Bầu, Chàng Rắn, Cặp sừng nai, Tướng Quân cụt đầu, Vua Cóc, Bảy nàng tiên
-            </p>
-            <p>
-                Các nhạc cụ như tù và, kèn, trống, sáo, thanh la và não bạt
-                được sử dụng trong một số hoạt động nghi lễ. Những trò chơi
-                dân gian được yêu thích gồm đi cà kheo, đánh khăng,
-                đánh cầu lông kiểu Sán Dìu và kéo co.
-            </p>
+        <h3>Thơ ca, âm nhạc và trò chơi dân gian</h3>
+        <p>
+            Kho tàng văn hóa dân gian của người Sán Dìu rất phong phú,
+            bao gồm thơ ca, truyện kể, truyện thơ, âm nhạc và các
+            trò chơi truyền thống.
+            Chuyện cổ tích , truyện kể tiêu biểu : Truyện Quả Bầu, Chàng Rắn, Cặp sừng nai, Tướng Quân cụt đầu, Vua Cóc, Bảy nàng tiên
+        </p>
+        <p>
+            Các nhạc cụ như tù và, kèn, trống, sáo, thanh la và não bạt
+            được sử dụng trong một số hoạt động nghi lễ. Những trò chơi
+            dân gian được yêu thích gồm đi cà kheo, đánh khăng,
+            đánh cầu lông kiểu Sán Dìu và kéo co.
+        </p>
 
-            <div class="thu-vien">
-                <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e17bd724-a02f-4741-8314-c6c5f232d345.jpg" alt="Trò chơi dân gian Sán Dìu 1">
-                <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/20200122144217-55.jpg" alt="Trò chơi dân gian Sán Dìu 2">
-            </div>
+        <div class="thu-vien">
+            <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e17bd724-a02f-4741-8314-c6c5f232d345.jpg" alt="Trò chơi dân gian Sán Dìu 1">
+            <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/20200122144217-55.jpg" alt="Trò chơi dân gian Sán Dìu 2">
+        </div>
 
-            <h3>Hát Soọng cô</h3>
-            <p>
-                Hát Soọng cô là một thể loại dân ca trữ tình đặc sắc,
-                gắn liền với đời sống tinh thần của người Sán Dìu,
-                trong đó có cộng đồng người Sán Dìu ở tỉnh Tuyên Quang.
-            </p>
-            <p>
-                Theo truyền thuyết về Truyện quả bầu, thuở xa xưa,
-                một trận lụt lớn khiến muôn loài chết chóc. Hai chị em
-                trong một ngôi làng may mắn sống sót nhờ chui vào
-                quả bầu khô. Sau khi nước rút, họ sinh con cháu,
-                làm cho cộng đồng người Sán Dìu hồi sinh.
-            </p>
-            <p>
-                Vì con cháu trong cùng một làng có quan hệ huyết thống,
-                họ phải tìm bạn đời ở làng khác. Để bày tỏ tình cảm,
-                người trẻ dùng tiếng hát diễn tả lòng mình. Truyền thuyết
-                kể rằng hát Soọng cô ra đời từ đó và được lưu truyền
-                đến ngày nay.
-            </p>
+        <h3>Hát Soọng cô</h3>
+        <p>
+            Hát Soọng cô là một thể loại dân ca trữ tình đặc sắc,
+            gắn liền với đời sống tinh thần của người Sán Dìu,
+            trong đó có cộng đồng người Sán Dìu ở tỉnh Tuyên Quang.
+        </p>
+        <p>
+            Theo truyền thuyết về Truyện quả bầu, thuở xa xưa,
+            một trận lụt lớn khiến muôn loài chết chóc. Hai chị em
+            trong một ngôi làng may mắn sống sót nhờ chui vào
+            quả bầu khô. Sau khi nước rút, họ sinh con cháu,
+            làm cho cộng đồng người Sán Dìu hồi sinh.
+        </p>
+        <p>
+            Vì con cháu trong cùng một làng có quan hệ huyết thống,
+            họ phải tìm bạn đời ở làng khác. Để bày tỏ tình cảm,
+            người trẻ dùng tiếng hát diễn tả lòng mình. Truyền thuyết
+            kể rằng hát Soọng cô ra đời từ đó và được lưu truyền
+            đến ngày nay.
+        </p>
 
-            <div class="thu-vien">
+    <div class="thu-vien">
         <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/a5dd130a-1928-4050-a761-a6e3bbaef6bf.jpg" alt="Văn hóa dân gian Sán Dìu 1">
         <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/0acfd4dc-eb6f-47b7-bc7a-ea4ebe6e1982.jpg" alt="Văn hóa dân gian Sán Dìu 2">
     </div>
 
-            <h3>Đặc điểm của hát Soọng cô</h3>
-            <ul>
-                <li>Gắn với sinh hoạt đời thường, lao động sản xuất.</li>
-                <li>Được trình diễn trong lễ hội và lễ cưới.</li>
-                <li>Có hình thức hát đối đáp giữa nam và nữ.</li>
-                <li>Đòi hỏi người hát phải nhanh trí, thông minh,
-                    hiểu biết và giỏi ứng khẩu.</li>
-                <li>Lời ca có thể được sáng tác linh hoạt theo hoàn cảnh
-                    hoặc tuân theo những giai điệu truyền thống.</li>
-            </ul>
+        <h3>Đặc điểm của hát Soọng cô</h3>
+        <ul>
+            <li>Gắn với sinh hoạt đời thường, lao động sản xuất.</li>
+            <li>Được trình diễn trong lễ hội và lễ cưới.</li>
+            <li>Có hình thức hát đối đáp giữa nam và nữ.</li>
+            <li>Đòi hỏi người hát phải nhanh trí, thông minh,
+                hiểu biết và giỏi ứng khẩu.</li>
+            <li>Lời ca có thể được sáng tác linh hoạt theo hoàn cảnh
+                hoặc tuân theo những giai điệu truyền thống.</li>
+        </ul>
 
-            <h3>Bảo tồn và phát huy giá trị văn hóa</h3>
-            <p>
-                Để bảo tồn và phổ biến làn điệu Soọng cô, tỉnh Tuyên Quang
-                khuyến khích thành lập các đội văn nghệ quần chúng,
-                sưu tầm và dàn dựng các tiết mục, đồng thời đưa làn điệu
-                này vào những chương trình biểu diễn văn hóa, nghệ thuật.
-            </p>
-            <p>
-                Những hoạt động đó góp phần gìn giữ bản sắc văn hóa,
-                truyền lại giá trị truyền thống cho thế hệ trẻ và
-                quảng bá nét đẹp văn hóa của dân tộc Sán Dìu.
-            </p>
+        <h3>Bảo tồn và phát huy giá trị văn hóa</h3>
+        <p>
+            Để bảo tồn và phổ biến làn điệu Soọng cô, tỉnh Tuyên Quang
+            khuyến khích thành lập các đội văn nghệ quần chúng,
+            sưu tầm và dàn dựng các tiết mục, đồng thời đưa làn điệu
+            này vào những chương trình biểu diễn văn hóa, nghệ thuật.
+        </p>
+        <p>
+            Những hoạt động đó góp phần gìn giữ bản sắc văn hóa,
+            truyền lại giá trị truyền thống cho thế hệ trẻ và
+            quảng bá nét đẹp văn hóa của dân tộc Sán Dìu.
+        </p>
 
-            <div class="highlight">
-                <strong>Giá trị nổi bật:</strong> Hát Soọng cô là một
-                biểu hiện tiêu biểu của đời sống tinh thần người Sán Dìu,
-                thể hiện tình yêu đôi lứa, sự giao lưu cộng đồng
-                và khả năng sáng tạo nghệ thuật dân gian.
+        <div class="highlight">
+            <strong>Giá trị nổi bật:</strong> Hát Soọng cô là một
+            biểu hiện tiêu biểu của đời sống tinh thần người Sán Dìu,
+            thể hiện tình yêu đôi lứa, sự giao lưu cộng đồng
+            và khả năng sáng tạo nghệ thuật dân gian.
+        </div>
+    </section>
+
+    <section id="dai-phan">
+        <h2>9. Lễ hội Đại Phan</h2>
+
+        <div class="noi-dung-anh">
+            <div class="chu">
+                <p>
+                    Lễ hội Đại Phan là một lễ tục đẹp của cộng đồng người
+                    Sán Dìu (Vân Đồn, Quảng Ninh). Lễ hội được phục dựng
+                    năm 2008 sau lần tổ chức cuối cùng vào năm 1944.
+                </p>
+                <p>
+                    Đại Phan là lễ hội của cộng đồng người Sán Dìu, được tổ
+                    chức để cầu mong cho dân làng được an yên, mưa thuận
+                    gió hòa, mùa màng tươi tốt, xua đuổi tà ma...
+                </p>
             </div>
-        </section>
+            <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/b285e5a7-9d3a-4059-9f41-b9dfb601797a.jpg" alt="Hội Đại Phan dân tộc Sán Dìu">
+        </div>
 
-            <section id="dai-phan">
-                <h2>9. Lễ hội Đại Phan</h2>
+        <h3>Các hoạt động chính</h3>
+        <div class="noi-dung-anh">
+            <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e6a9a276-94b7-4c4b-8c22-eed7c6f6c60f.jpg" alt="Lễ rước thành hoàng làng">
+            <div class="chu">
+                <ul>
+                    <li>Lễ rước thành hoàng làng.</li>
+                    <li>Dựng cây phan (cây nêu).</li>
+                    <li>Hát Soọng cô.</li>
+                    <li>Leo gươm.</li>
+                    <li>Lội qua than hồng.</li>
+                    <li>Cấp sớ điệp sắc phong cho thầy cúng.</li>
+                </ul>
+            </div>
+        </div>
 
-                <div class="noi-dung-anh">
-                    <div class="chu">
-                        <p>
-                            Lễ hội Đại Phan là một lễ tục đẹp của cộng đồng người
-                            Sán Dìu (Vân Đồn, Quảng Ninh). Lễ hội được phục dựng
-                            năm 2008 sau lần tổ chức cuối cùng vào năm 1944.
-                        </p>
-                        <p>
-                            Đại Phan là lễ hội của cộng đồng người Sán Dìu, được tổ
-                            chức để cầu mong cho dân làng được an yên, mưa thuận
-                            gió hòa, mùa màng tươi tốt, xua đuổi tà ma...
-                        </p>
-                    </div>
-                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/b285e5a7-9d3a-4059-9f41-b9dfb601797a.jpg" alt="Hội Đại Phan dân tộc Sán Dìu">
-                </div>
+        <h3>Điểm nhấn đặc sắc</h3>
 
-                <h3>Các hoạt động chính</h3>
-                <div class="noi-dung-anh">
-                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/c6170c7b-0d50-47ee-ab9d-71a1ef7bbe3d.jpg" alt="Lễ rước thành hoàng làng">
-                    <div class="chu">
-                        <ul>
-                            <li>Lễ rước thành hoàng làng.</li>
-                            <li>Dựng cây phan (cây nêu).</li>
-                            <li>Hát Soọng cô.</li>
-                            <li>Leo gươm.</li>
-                            <li>Lội qua than hồng.</li>
-                            <li>Cấp sớ điệp sắc phong cho thầy cúng.</li>
-                        </ul>
-                    </div>
-                </div>
+        <h3>Lễ leo dao</h3>
+        <div class="noi-dung-anh">
+            <div class="chu">
+                <p>
+                    Thầy cúng đi chân trần (được đóng triện đỏ) bước lên
+                    bậc thang gồm 12 lưỡi dao sắc lẹm gắn trên cây âm -
+                    dương mà không bị thương. Nghi lễ nhằm tái hiện truyền
+                    thuyết Vua Cóc, vẩy thóc gạo ban phúc lộc cho dân làng
+                    và cầu nguyện bề trên phù hộ.
+                </p>
+            </div>
+            <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/c6170c7b-0d50-47ee-ab9d-71a1ef7bbe3d.jpg" alt="Lễ leo dao">
+        </div>
 
-                <h3>Điểm nhấn đặc sắc</h3>
+        <h3>Lội qua than hồng</h3>
+        <div class="noi-dung-anh">
+            <div class="chu">
+                <p>
+                    Các thầy cúng bước qua thảm than đỏ rực với đôi chân trần một
+                    cách điệu nghệ mà không bị bỏng, thể hiện nét văn hóa tâm linh
+                    độc đáo, bí truyền của người Sán Dìu.
+                </p>
+            </div>
+            <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/1c7b71d1-5d09-4524-b9b5-3bb7ce5a1408.jpg" alt="Lội qua than hồng">
+        </div>
+        <div class="highlight">
+            <strong>Ý nghĩa:</strong> Lễ hội Đại Phan thể hiện đời sống
+            tâm linh và mong ước bình yên, no ấm của cộng đồng người Sán Dìu.
+        </div>
+    </section>
 
-                <h3>Lễ leo dao</h3>
-                <div class="noi-dung-anh">
-                    <div class="chu">
-                        <p>
-                            Thầy cúng đi chân trần (được đóng triện đỏ) bước lên
-                            bậc thang gồm 12 lưỡi dao sắc lẹm gắn trên cây âm -
-                            dương mà không bị thương. Nghi lễ nhằm tái hiện truyền
-                            thuyết Vua Cóc, vẩy thóc gạo ban phúc lộc cho dân làng
-                            và cầu nguyện bề trên phù hộ.
-                        </p>
-                    </div>
-                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/e6a9a276-94b7-4c4b-8c22-eed7c6f6c60f.jpg" alt="Lễ leo dao">
-                </div>
+    <section id="ket-luan">
+        <h2>10. Kết luận</h2>
+        <p>
+            Dân tộc Sán Dìu có một nền văn hóa truyền thống đa dạng,
+            thể hiện qua ngôn ngữ, trang phục, phong tục cưới xin,
+            tang lễ, lễ Tết và kho tàng văn học dân gian.
+            Đặc biệt, hát Soọng cô là nét văn hóa độc đáo,
+            góp phần tạo nên bản sắc riêng của cộng đồng.
+        </p>
+        <p>
+            Tìm hiểu và bảo tồn các giá trị văn hóa của người Sán Dìu
+            không chỉ giúp gìn giữ di sản của một dân tộc mà còn
+            góp phần bảo vệ sự đa dạng văn hóa của Việt Nam.
+        </p>
+    </section>
 
-                <h3>Lội qua than hồng</h3>
-                <div class="noi-dung-anh">
-                    <div class="chu">
-                        <p>
-                            Các thầy cúng bước qua thảm than đỏ rực với đôi chân trần một
-                            cách điệu nghệ mà không bị bỏng, thể hiện nét văn hóa tâm linh
-                            độc đáo, bí truyền của người Sán Dìu.
-                        </p>
-                    </div>
-                    <img src="https://uploads.onecompiler.io/4575h23zq/4575nhaj4/1c7b71d1-5d09-4524-b9b5-3bb7ce5a1408.jpg" alt="Lội qua than hồng">
-                </div>
-                <div class="highlight">
-                    <strong>Ý nghĩa:</strong> Lễ hội Đại Phan thể hiện đời sống
-                    tâm linh và mong ước bình yên, no ấm của cộng đồng người Sán Dìu.
-                </div>
-            </section>
-
-        <section id="ket-luan">
-            <h2>10. Kết luận</h2>
-            <p>
-                Dân tộc Sán Dìu có một nền văn hóa truyền thống đa dạng,
-                thể hiện qua ngôn ngữ, trang phục, phong tục cưới xin,
-                tang lễ, lễ Tết và kho tàng văn học dân gian.
-                Đặc biệt, hát Soọng cô là nét văn hóa độc đáo,
-                góp phần tạo nên bản sắc riêng của cộng đồng.
-            </p>
-            <p>
-                Tìm hiểu và bảo tồn các giá trị văn hóa của người Sán Dìu
-                không chỉ giúp gìn giữ di sản của một dân tộc mà còn
-                góp phần bảo vệ sự đa dạng văn hóa của Việt Nam.
-            </p>
-        </section>
-
-        <section id="video">
-    <h2>11. Video tham khảo</h2>
-    <p>
-        Một số video giúp bạn tìm hiểu thêm về đời sống và văn hóa
-        của người Sán Dìu.
-    </p>
+    <section id="video">
+        <h2>11. Video tham khảo</h2>
+        <p>
+            Một số video giúp bạn tìm hiểu thêm về đời sống và văn hóa
+            của người Sán Dìu.
+        </p>
 
     <div class="video-hang">
         <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/_U4B13JBPvI?rel=0&modestbranding=1&iv_load_policy=3"
+            <iframe src="https://www.youtube.com/embed/OsZ6t4Wo24M?si=0&modestbranding=1&iv_load_policy=3"
                 title="Video tham khảo về dân tộc Sán Dìu 1"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 referrerpolicy="strict-origin-when-cross-origin"
@@ -821,17 +997,71 @@
             </iframe>
         </div>
         <div class="video-wrap">
-            <iframe src="https://www.youtube.com/embed/SzRHFpJk6xA?rel=0&modestbranding=1&iv_load_policy=3"
+            <iframe src="https://www.youtube.com/embed/lbDwU19x9iE?rel=0&modestbranding=1&iv_load_policy=3"
                 title="Video tham khảo về dân tộc Sán Dìu 4"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen>
             </iframe>
         </div>
-    </div>
-</section>
+    </section>
 
-    </main>
+        <section id="cau-hoi">  
+            <form id="quiz-form">
+                <div id="quiz-progress"></div>
+                <div id="quiz-content"></div>
+                <div id="quiz-feedback" aria-live="polite"></div>
+
+                <button type="button" id="next-question" hidden>
+                    Câu tiếp theo →
+                </button>
+
+                <div id="quiz-result" aria-live="polite"></div>
+                <button type="button" id="restart-quiz" hidden>
+                    Làm lại từ đầu
+                </button>
+            </form>
+    </section>
+
+    <section id="danh-gia">
+        <h2>13. Đánh giá và nhận xét</h2>
+        <p>Bạn cảm thấy trang web này như thế nào? Hãy để lại đánh giá nhé!</p>
+
+        <form id="review-form">
+            <label>Đánh giá của bạn:</label>
+
+            <div class="rating-stars">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="5 sao">★</label>
+
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 sao">★</label>
+
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 sao">★</label>
+
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 sao">★</label>
+
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 sao">★</label>
+            </div>
+
+            <label for="review-comment">Nhận xét của bạn:</label>
+            <textarea id="review-comment" rows="4"
+                placeholder="Nhập nhận xét tại đây..."></textarea>
+
+            <button type="submit">Gửi đánh giá</button>
+            <p id="review-message" aria-live="polite"></p>
+        </form>
+
+        <h3>Nhận xét từ mọi người</h3>
+        <div id="reviews-list">
+            <p>Đang tải nhận xét...</p>
+        </div>
+    </section>
+
+</main>
 
     <footer>
         <p><strong>KHÁM PHÁ VĂN HÓA DÂN TỘC SÁN DÌU</strong></p>
@@ -839,7 +1069,313 @@
         <a href="#top" class="top-button">Trở về đầu trang ↑</a>
     </footer>
 
+    <script>
         
+        const questions = [
+            {
+                q: "Câu 1. Người Sán Dìu thuộc nhóm ngôn ngữ nào?",
+                options: ["Nam Á", "Hán - Tạng", "Thái - Ka-đai", "Mông - Dao"],
+                answer: 1
+            },
+            {
+                q: "Câu 2. Người Sán Dìu cư trú tập trung ở những tỉnh nào sau đây?",
+                options: [
+                    "Thái Nguyên, Vĩnh Phúc, Bắc Giang, Quảng Ninh",
+                    "Nghệ An, Hà Tĩnh, Quảng Bình, Quảng Trị",
+                    "Đắk Lắk, Gia Lai, Kon Tum, Đắk Nông",
+                    "An Giang, Đồng Tháp, Cần Thơ, Cà Mau"
+                ],
+                answer: 0
+            },
+            {
+                q: "Câu 3. Trang phục truyền thống của phụ nữ Sán Dìu có đặc điểm nào?",
+                options: [
+                    "Áo ngắn, váy nhiều màu sắc và đội khăn trắng",
+                    "Áo dài, váy màu chàm, kết hợp với đồ trang sức bằng bạc",
+                    "Áo tứ thân, váy đen và nón quai thao",
+                    "Áo thổ cẩm, váy đỏ và vòng cổ bằng gỗ"
+                ],
+                answer: 1
+            },
+            {
+                q: "Câu 4. Hát Soọng cô là loại hình văn hóa nào?",
+                options: [
+                    "Một loại hình múa dân gian",
+                    "Một nghi lễ trong đám tang",
+                    "Một thể loại dân ca trữ tình, thường dùng trong hát đối đáp nam nữ",
+                    "Một trò chơi dân gian trong lễ hội"
+                ],
+                answer: 2
+            },
+            {
+                q: "Câu 5. Theo truyền thuyết, loại truyện nào kể về nguồn gốc dân tộc Sán Dìu?",
+                options: [
+                    "Truyện Thánh Gióng",
+                    "Truyện Sơn Tinh, Thủy Tinh",
+                    "Truyện quả bầu",
+                    "Truyện Thạch Sanh"
+                ],
+                answer: 2
+            },
+            {
+                q: "Câu 6. Ông mối có vai trò gì trong phong tục cưới xin?",
+                options: [
+                    "Chọn trang phục cưới cho cô dâu",
+                    "Xem tuổi, thông báo kết quả và kết nối các bước cưới hỏi",
+                    "Quyết định nghề nghiệp của đôi trai gái",
+                    "Tổ chức trò chơi trong ngày cưới"
+                ],
+                answer: 1
+            },
+            {
+                q: "Câu 7. Tết Đông chí còn mang ý nghĩa đặc biệt gì?",
+                options: [
+                    "Cầu mong mưa thuận gió hòa, mùa màng bội thu",
+                    "Cầu mong sức khỏe cho người cao tuổi",
+                    "Cầu mong con đàn, cháu đống",
+                    "Tưởng nhớ người có công với làng"
+                ],
+                answer: 2
+            },
+            {
+                q: "Câu 8. Lễ hội Đại Phan được tổ chức nhằm mục đích gì?",
+                options: [
+                    "Tưởng nhớ người đã khuất",
+                    "Cầu bình an, mưa thuận gió hòa, mùa màng tươi tốt và xua đuổi tà ma",
+                    "Chào đón năm học mới",
+                    "Kỷ niệm ngày thành lập làng"
+                ],
+                answer: 1
+            },
+            {
+                q: "Câu 9. Nghi lễ leo dao có đặc điểm nào?",
+                options: [
+                    "Đi chân trần lên bậc thang gồm 12 lưỡi dao sắc",
+                    "Đi trên dây giữa hai cây cao",
+                    "Nhảy qua những vòng lửa lớn",
+                    "Trèo cây nêu lấy đồ vật"
+                ],
+                answer: 0
+            },
+            {
+                q: "Câu 10. Hoạt động nào góp phần bảo tồn văn hóa Sán Dìu?",
+                options: [
+                    "Hạn chế tổ chức hoạt động truyền thống",
+                    "Thay hoàn toàn dân ca bằng nhạc hiện đại",
+                    "Thành lập đội văn nghệ, sưu tầm và biểu diễn hát Soọng cô",
+                    "Chỉ lưu giữ phong tục trong gia đình"
+                ],
+                answer: 2
+            }
+        ];
+
+        const content = document.getElementById("quiz-content");
+        const progress = document.getElementById("quiz-progress");
+        const feedback = document.getElementById("quiz-feedback");
+        const nextButton = document.getElementById("next-question");
+        const result = document.getElementById("quiz-result");
+        const restartButton = document.getElementById("restart-quiz");
+
+        let current = 0;
+        let score = 0;
+        let answered = false;
+
+        function showQuestion() {
+            answered = false;
+            feedback.innerHTML = "";
+            nextButton.hidden = true;
+            result.innerHTML = "";
+
+            const item = questions[current];
+
+            progress.textContent =
+                "Câu " + (current + 1) + "/" + questions.length;
+
+            let html = "<h3>" + item.q + "</h3>";
+
+            item.options.forEach((option, index) => {
+                html += `
+                    <button type="button"
+                        class="quiz-option"
+                        data-index="${index}">
+                        ${String.fromCharCode(65 + index)}. ${option}
+                    </button>
+                `;
+            });
+
+            content.innerHTML = html;
+
+            content.querySelectorAll(".quiz-option").forEach(button => {
+                button.addEventListener("click", function () {
+                    if (answered) return;
+
+                    answered = true;
+
+                    const selected = Number(this.dataset.index);
+                    const correct = item.answer;
+
+                    content.querySelectorAll(".quiz-option").forEach(
+                        optionButton => {
+                            optionButton.disabled = true;
+
+                            if (Number(optionButton.dataset.index) === correct) {
+                                optionButton.classList.add("correct-answer");
+                            }
+                        }
+                    );
+
+                    if (selected === correct) {
+                        score++;
+                        feedback.innerHTML =
+                            '<p class="correct">Chính xác! 🎉</p>';
+                    } else {
+                        feedback.innerHTML =
+                            '<p class="wrong">Chưa chính xác! Đáp án đúng là ' +
+                            String.fromCharCode(65 + correct) + '.</p>';
+                    }
+
+                    nextButton.hidden = false;
+
+                    nextButton.textContent =
+                        current === questions.length - 1
+                            ? "Xem kết quả"
+                            : "Câu tiếp theo →";
+                });
+            });
+        }
+
+        nextButton.addEventListener("click", function () {
+            if (!answered) return;
+
+            current++;
+
+            if (current < questions.length) {
+                showQuestion();
+            } else {
+                content.innerHTML = "";
+                progress.textContent = "Hoàn thành bài trắc nghiệm!";
+                feedback.innerHTML = "";
+
+                nextButton.hidden = true;
+                restartButton.hidden = false;
+
+                result.innerHTML =
+                    "<h3>Bạn trả lời đúng " + score + "/10 câu!</h3>" +
+                    "<p>Điểm số: " + (score * 10) + "/100</p>";
+            }
+        });
+    </script>
+
+            <script type="module">
+            import { initializeApp } from
+                "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+            import {
+                getFirestore,
+                collection,
+                addDoc,
+                serverTimestamp,
+                query,
+                orderBy,
+                limit,
+                onSnapshot
+            } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+            const firebaseConfig = {
+                apiKey: "AIzaSyBBNqNRlqqHMHxkuiOrZ_2Zc8tvX8FRN0Q",
+                authDomain: "van-hoa-san-diu.firebaseapp.com",
+                projectId: "van-hoa-san-diu",
+                storageBucket: "van-hoa-san-diu.firebasestorage.app",
+                messagingSenderId: "191029556271",
+                appId: "1:191029556271:web:e0462d8c0bac23d0ca02da",
+                measurementId: "G-G4CSW0REKC"
+            };
+
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            form.addEventListener("submit", async (event) => {
+                event.preventDefault();
+
+            const selectedRating =
+                document.querySelector('input[name="rating"]:checked');
+            const comment = commentInput.value.trim();
+
+            if (!selectedRating) {
+                message.textContent = "Vui lòng chọn số sao!";
+                return;
+            }
+
+            if (!comment || comment.length > 500) {
+                message.textContent =
+                    "Nhận xét không được để trống hoặc vượt quá 500 ký tự.";
+                return;
+            }
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            message.textContent = "Đang gửi đánh giá...";
+
+            try {
+                await addDoc(collection(db, "reviews"), {
+                    rating: Number(selectedRating.value),
+                    comment: comment,
+                    createdAt: serverTimestamp()
+                });
+
+                form.reset();
+                message.textContent = "Gửi đánh giá thành công!";
+            } catch (error) {
+                console.error("Lỗi gửi đánh giá:", error);
+                message.textContent =
+                "Không gửi được đánh giá. Hãy kiểm tra kết nối và cấu hình Firebase.";
+            } finally {
+                submitButton.disabled = false;
+            }
+            });
+
+            const reviewsQuery = query(
+                collection(db, "reviews"),
+                orderBy("createdAt", "desc"),
+                limit(50)
+            );
+
+            onSnapshot(reviewsQuery, (snapshot) => {
+                reviewsList.replaceChildren();
+
+                if (snapshot.empty) {
+                    reviewsList.textContent = "Chưa có nhận xét nào.";
+                    return;
+                }
+
+                snapshot.forEach((documentSnapshot) => {
+                    const review = documentSnapshot.data();
+
+                    const card = document.createElement("div");
+                    card.className = "review-card";
+
+                    const stars = document.createElement("p");
+                    stars.className = "review-rating";
+                    stars.textContent =
+                        "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+
+                    const comment = document.createElement("p");
+                    comment.textContent = review.comment;
+
+                    const date = document.createElement("small");
+                    date.textContent = review.createdAt
+                        ? review.createdAt.toDate().toLocaleString("vi-VN")
+                        : "Vừa gửi";
+
+                    card.append(stars, comment, date);
+                    reviewsList.appendChild(card);
+                });
+            }, (error) => {
+                console.error("Lỗi tải nhận xét:", error);
+                reviewsList.textContent =
+                    "Không tải được nhận xét. Vui lòng thử lại sau.";
+            });    
+            </script>
 
 </body>
 </html>
