@@ -1068,7 +1068,10 @@
         </div>
     </section>
 
-        <section id="cau-hoi">  
+        <section id="cau-hoi">
+            <h2>12. Câu hỏi trắc nghiệm</h2>
+            <p>Hãy chọn đáp án đúng để kiểm tra kiến thức về dân tộc Sán Dìu.</p>
+
             <form id="quiz-form">
                 <div id="quiz-progress"></div>
                 <div id="quiz-content"></div>
@@ -1079,14 +1082,15 @@
                 </button>
 
                 <div id="quiz-result" aria-live="polite"></div>
+
                 <button type="button" id="restart-quiz" hidden>
                     Làm lại từ đầu
                 </button>
             </form>
-    </section>
+        </section>
 
 <section id="danh-gia">
-    <h2>13. Đánh giá và nhận xét</h2>
+    <h2> Đánh giá và nhận xét</h2>
     <p>Bạn cảm thấy trang web này như thế nào? Hãy để lại đánh giá nhé!</p>
 
     <form id="review-form">
@@ -1330,6 +1334,16 @@
                     "<p>Điểm số: " + (score * 10) + "/100</p>";
             }
         });
+
+        restartButton.addEventListener("click", function () {
+            current = 0;
+            score = 0;
+            restartButton.hidden = true;
+            showQuestion();
+        });
+
+        showQuestion();
+
     </script>
 
 <script type="module">
