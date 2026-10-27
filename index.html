@@ -442,13 +442,22 @@
             margin-top: 20px;
         }
 
+        #review-form fieldset {
+            border: 0;
+            padding: 0;
+            margin: 0 0 15px;
+        }
+
+        #review-form legend,
         #review-form > label {
             display: block;
-            margin: 15px 0 8px;
             font-weight: bold;
+            margin: 15px 0 8px;
+            padding: 0;
         }
 
         .rating-stars {
+            position: relative;
             display: flex;
             flex-direction: row-reverse;
             justify-content: flex-end;
@@ -456,11 +465,16 @@
         }
 
         .rating-stars input {
-            display: none;
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
         }
 
         .rating-stars label {
-            font-size: 35px;
+            font-size: 38px;
+            line-height: 1;
+            padding: 0 2px;
             color: #ccc;
             cursor: pointer;
             transition: color 0.2s;
@@ -472,34 +486,59 @@
             color: #ffc107;
         }
 
+        .rating-stars input:focus-visible + label {
+            outline: 3px solid #2f80d1;
+            outline-offset: 2px;
+            border-radius: 6px;
+        }
+
         #review-comment {
-            box-sizing: border-box;
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 8px;
             font: inherit;
+            font-size: 18px;
             resize: vertical;
         }
 
-        #review-form button {
+        .review-count {
+            text-align: right;
+            font-size: 14px;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        #review-submit {
             margin-top: 12px;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border: none;
             border-radius: 8px;
-            background-color: #287a4b;
+            background: #287a4b;
             color: white;
-            font-size: 16px;
+            font-size: 17px;
             cursor: pointer;
         }
 
-        #review-form button:hover {
-            background-color: #1d5d38;
+        #review-submit:hover:not(:disabled) {
+            background: #1d5d38;
+        }
+
+        #review-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         #review-message {
-            color: #287a4b;
+            min-height: 1.6em;
+            margin-top: 10px;
             font-weight: bold;
+            color: #287a4b;
+            text-align: left;
+        }
+
+        #review-message.error {
+            color: #c0392b;
         }
 
         #reviews-list {
@@ -517,7 +556,9 @@
 
         .review-card p {
             margin: 6px 0;
+            text-align: left;
             overflow-wrap: anywhere;
+            white-space: pre-line;
         }
 
         .review-card .review-rating {
@@ -528,6 +569,7 @@
 
         .review-card small {
             color: #777;
+            font-size: 15px;
         }
 
     </style>
@@ -1023,43 +1065,45 @@
             </form>
     </section>
 
-    <section id="danh-gia">
-        <h2>13. Đánh giá và nhận xét</h2>
-        <p>Bạn cảm thấy trang web này như thế nào? Hãy để lại đánh giá nhé!</p>
+<section id="danh-gia">
+    <h2>13. Đánh giá và nhận xét</h2>
+    <p>Bạn cảm thấy trang web này như thế nào? Hãy để lại đánh giá nhé!</p>
 
-        <form id="review-form">
-            <label>Đánh giá của bạn:</label>
-
+    <form id="review-form">
+        <fieldset>
+            <legend>Đánh giá của bạn:</legend>
             <div class="rating-stars">
                 <input type="radio" id="star5" name="rating" value="5">
-                <label for="star5" title="5 sao">★</label>
+                <label for="star5" title="5 sao" aria-label="5 sao">★</label>
 
                 <input type="radio" id="star4" name="rating" value="4">
-                <label for="star4" title="4 sao">★</label>
+                <label for="star4" title="4 sao" aria-label="4 sao">★</label>
 
                 <input type="radio" id="star3" name="rating" value="3">
-                <label for="star3" title="3 sao">★</label>
+                <label for="star3" title="3 sao" aria-label="3 sao">★</label>
 
                 <input type="radio" id="star2" name="rating" value="2">
-                <label for="star2" title="2 sao">★</label>
+                <label for="star2" title="2 sao" aria-label="2 sao">★</label>
 
                 <input type="radio" id="star1" name="rating" value="1">
-                <label for="star1" title="1 sao">★</label>
+                <label for="star1" title="1 sao" aria-label="1 sao">★</label>
             </div>
+        </fieldset>
 
-            <label for="review-comment">Nhận xét của bạn:</label>
-            <textarea id="review-comment" rows="4"
-                placeholder="Nhập nhận xét tại đây..."></textarea>
+        <label for="review-comment">Nhận xét của bạn:</label>
+        <textarea id="review-comment" rows="4" maxlength="500"
+            placeholder="Nhập nhận xét tại đây..."></textarea>
+        <div class="review-count"><span id="review-count">0</span>/500 ký tự</div>
 
-            <button type="submit">Gửi đánh giá</button>
-            <p id="review-message" aria-live="polite"></p>
-        </form>
+        <button type="submit" id="review-submit">Gửi đánh giá</button>
+        <p id="review-message" role="status" aria-live="polite"></p>
+    </form>
 
-        <h3>Nhận xét từ mọi người</h3>
-        <div id="reviews-list">
-            <p>Đang tải nhận xét...</p>
-        </div>
-    </section>
+    <h3>Nhận xét từ mọi người</h3>
+    <div id="reviews-list">
+        <p>Đang tải nhận xét...</p>
+    </div>
+</section>
 
 </main>
 
@@ -1266,116 +1310,166 @@
         });
     </script>
 
-            <script type="module">
-            import { initializeApp } from
-                "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+<script type="module">
+    import { initializeApp } from
+        "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
-            import {
-                getFirestore,
-                collection,
-                addDoc,
-                serverTimestamp,
-                query,
-                orderBy,
-                limit,
-                onSnapshot
-            } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+    import {
+        getFirestore,
+        collection,
+        addDoc,
+        serverTimestamp,
+        query,
+        orderBy,
+        limit,
+        onSnapshot
+    } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-            const firebaseConfig = {
-                apiKey: "AIzaSyBBNqNRlqqHMHxkuiOrZ_2Zc8tvX8FRN0Q",
-                authDomain: "van-hoa-san-diu.firebaseapp.com",
-                projectId: "van-hoa-san-diu",
-                storageBucket: "van-hoa-san-diu.firebasestorage.app",
-                messagingSenderId: "191029556271",
-                appId: "1:191029556271:web:e0462d8c0bac23d0ca02da",
-                measurementId: "G-G4CSW0REKC"
-            };
+    const firebaseConfig = {
+        apiKey: "AIzaSyBBNqNRlqqHMHxkuiOrZ_2Zc8tvX8FRN0Q",
+        authDomain: "van-hoa-san-diu.firebaseapp.com",
+        projectId: "van-hoa-san-diu",
+        storageBucket: "van-hoa-san-diu.firebasestorage.app",
+        messagingSenderId: "191029556271",
+        appId: "1:191029556271:web:e0462d8c0bac23d0ca02da",
+        measurementId: "G-G4CSW0REKC"
+    };
 
-            const app = initializeApp(firebaseConfig);
-            const db = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-            form.addEventListener("submit", async (event) => {
-                event.preventDefault();
+    // Các phần tử trên trang (bản cũ thiếu phần này nên bị lỗi)
+    const form = document.getElementById("review-form");
+    const commentInput = document.getElementById("review-comment");
+    const counter = document.getElementById("review-count");
+    const message = document.getElementById("review-message");
+    const submitButton = document.getElementById("review-submit");
+    const reviewsList = document.getElementById("reviews-list");
 
-            const selectedRating =
-                document.querySelector('input[name="rating"]:checked');
-            const comment = commentInput.value.trim();
+    const MAX_LENGTH = 500;
+    const COOLDOWN_MS = 30000;
+    const COOLDOWN_KEY = "lastReviewTime";
 
-            if (!selectedRating) {
-                message.textContent = "Vui lòng chọn số sao!";
-                return;
-            }
+    function showMessage(text, isError) {
+        message.textContent = text;
+        message.classList.toggle("error", Boolean(isError));
+    }
 
-            if (!comment || comment.length > 500) {
-                message.textContent =
-                    "Nhận xét không được để trống hoặc vượt quá 500 ký tự.";
-                return;
-            }
+    function getLastTime() {
+        try { return Number(localStorage.getItem(COOLDOWN_KEY)) || 0; }
+        catch (e) { return 0; }
+    }
 
-            const submitButton = form.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            message.textContent = "Đang gửi đánh giá...";
+    function setLastTime() {
+        try { localStorage.setItem(COOLDOWN_KEY, String(Date.now())); }
+        catch (e) { /* bỏ qua */ }
+    }
 
-            try {
-                await addDoc(collection(db, "reviews"), {
-                    rating: Number(selectedRating.value),
-                    comment: comment,
-                    createdAt: serverTimestamp()
-                });
+    commentInput.addEventListener("input", () => {
+        counter.textContent = commentInput.value.length;
+    });
 
-                form.reset();
-                message.textContent = "Gửi đánh giá thành công!";
-            } catch (error) {
-                console.error("Lỗi gửi đánh giá:", error);
-                message.textContent =
-                "Không gửi được đánh giá. Hãy kiểm tra kết nối và cấu hình Firebase.";
-            } finally {
-                submitButton.disabled = false;
-            }
+    // Gửi đánh giá
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const selected = form.querySelector('input[name="rating"]:checked');
+        const comment = commentInput.value.trim();
+
+        if (!selected) {
+            showMessage("Vui lòng chọn số sao!", true);
+            return;
+        }
+        if (!comment) {
+            showMessage("Vui lòng nhập nhận xét.", true);
+            return;
+        }
+        if (comment.length > MAX_LENGTH) {
+            showMessage("Nhận xét tối đa " + MAX_LENGTH + " ký tự.", true);
+            return;
+        }
+
+        const wait = COOLDOWN_MS - (Date.now() - getLastTime());
+        if (wait > 0) {
+            showMessage("Bạn vừa gửi đánh giá. Vui lòng đợi " +
+                Math.ceil(wait / 1000) + " giây nữa.", true);
+            return;
+        }
+
+        submitButton.disabled = true;
+        showMessage("Đang gửi đánh giá...", false);
+
+        try {
+            await addDoc(collection(db, "reviews"), {
+                rating: Number(selected.value),
+                comment: comment,
+                createdAt: serverTimestamp()
             });
 
-            const reviewsQuery = query(
-                collection(db, "reviews"),
-                orderBy("createdAt", "desc"),
-                limit(50)
+            setLastTime();
+            form.reset();
+            counter.textContent = "0";
+            showMessage("Gửi đánh giá thành công! Cảm ơn bạn.", false);
+        } catch (error) {
+            console.error("Lỗi gửi đánh giá:", error);
+            showMessage(
+                error.code === "permission-denied"
+                    ? "Không có quyền ghi dữ liệu. Hãy kiểm tra Firestore Rules."
+                    : "Không gửi được đánh giá. Hãy kiểm tra kết nối mạng.",
+                true
             );
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
 
-            onSnapshot(reviewsQuery, (snapshot) => {
-                reviewsList.replaceChildren();
+    // Hiển thị danh sách nhận xét (cập nhật trực tiếp)
+    const reviewsQuery = query(
+        collection(db, "reviews"),
+        orderBy("createdAt", "desc"),
+        limit(50)
+    );
 
-                if (snapshot.empty) {
-                    reviewsList.textContent = "Chưa có nhận xét nào.";
-                    return;
-                }
+    onSnapshot(reviewsQuery, (snapshot) => {
+        reviewsList.replaceChildren();
 
-                snapshot.forEach((documentSnapshot) => {
-                    const review = documentSnapshot.data();
+        if (snapshot.empty) {
+            const empty = document.createElement("p");
+            empty.textContent = "Chưa có nhận xét nào. Hãy là người đầu tiên!";
+            reviewsList.appendChild(empty);
+            return;
+        }
 
-                    const card = document.createElement("div");
-                    card.className = "review-card";
+        snapshot.forEach((documentSnapshot) => {
+            const review = documentSnapshot.data({ serverTimestamps: "estimate" });
+            const rating = Math.min(5, Math.max(0, Math.round(Number(review.rating) || 0)));
 
-                    const stars = document.createElement("p");
-                    stars.className = "review-rating";
-                    stars.textContent =
-                        "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+            const card = document.createElement("div");
+            card.className = "review-card";
 
-                    const comment = document.createElement("p");
-                    comment.textContent = review.comment;
+            const stars = document.createElement("p");
+            stars.className = "review-rating";
+            stars.textContent = "★".repeat(rating) + "☆".repeat(5 - rating);
 
-                    const date = document.createElement("small");
-                    date.textContent = review.createdAt
-                        ? review.createdAt.toDate().toLocaleString("vi-VN")
-                        : "Vừa gửi";
+            const comment = document.createElement("p");
+            comment.textContent = review.comment || "";
 
-                    card.append(stars, comment, date);
-                    reviewsList.appendChild(card);
-                });
-            }, (error) => {
-                console.error("Lỗi tải nhận xét:", error);
-                reviewsList.textContent =
-                    "Không tải được nhận xét. Vui lòng thử lại sau.";
-            });    
-            </script>
+            const date = document.createElement("small");
+            date.textContent = review.createdAt
+                ? review.createdAt.toDate().toLocaleString("vi-VN")
+                : "Vừa gửi";
+
+            card.append(stars, comment, date);
+            reviewsList.appendChild(card);
+        });
+    }, (error) => {
+        console.error("Lỗi tải nhận xét:", error);
+        reviewsList.textContent =
+            error.code === "permission-denied"
+                ? "Không có quyền đọc dữ liệu. Hãy kiểm tra Firestore Rules."
+                : "Không tải được nhận xét. Vui lòng thử lại sau.";
+    });
+</script>
 
 </body>
 </html>
