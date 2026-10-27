@@ -1068,26 +1068,26 @@
         </div>
     </section>
 
-        <section id="cau-hoi">
-            <h2>12. Câu hỏi trắc nghiệm</h2>
-            <p>Hãy chọn đáp án đúng để kiểm tra kiến thức về dân tộc Sán Dìu.</p>
-
-            <form id="quiz-form">
-                <div id="quiz-progress"></div>
-                <div id="quiz-content"></div>
-                <div id="quiz-feedback" aria-live="polite"></div>
-
-                <button type="button" id="next-question" hidden>
-                    Câu tiếp theo →
-                </button>
-
-                <div id="quiz-result" aria-live="polite"></div>
-
-                <button type="button" id="restart-quiz" hidden>
-                    Làm lại từ đầu
-                </button>
-            </form>
-        </section>
+    <section id="cau-hoi">
+        <h2>12. Câu hỏi trắc nghiệm</h2>
+        <p>Hãy chọn đáp án đúng để kiểm tra kiến thức về dân tộc Sán Dìu.</p>
+    
+        <form id="quiz-form">
+            <div id="quiz-progress"></div>
+            <div id="quiz-content"></div>
+            <div id="quiz-feedback" aria-live="polite"></div>
+    
+            <button type="button" id="next-question" hidden>
+                Câu tiếp theo →
+            </button>
+    
+            <div id="quiz-result" aria-live="polite"></div>
+    
+            <button type="button" id="restart-quiz" hidden>
+                Làm lại từ đầu
+            </button>
+        </form>
+    </section>
 
 <section id="danh-gia">
     <h2> Đánh giá và nhận xét</h2>
@@ -1140,6 +1140,7 @@
     </footer>
 
     <script>
+        
         
         const questions = [
             {
@@ -1238,31 +1239,31 @@
                 answer: 2
             }
         ];
-
+        
         const content = document.getElementById("quiz-content");
         const progress = document.getElementById("quiz-progress");
         const feedback = document.getElementById("quiz-feedback");
         const nextButton = document.getElementById("next-question");
         const result = document.getElementById("quiz-result");
         const restartButton = document.getElementById("restart-quiz");
-
+        
         let current = 0;
         let score = 0;
         let answered = false;
-
+        
         function showQuestion() {
             answered = false;
             feedback.innerHTML = "";
             nextButton.hidden = true;
             result.innerHTML = "";
-
+        
             const item = questions[current];
-
+        
             progress.textContent =
                 "Câu " + (current + 1) + "/" + questions.length;
-
+        
             let html = "<h3>" + item.q + "</h3>";
-
+        
             item.options.forEach((option, index) => {
                 html += `
                     <button type="button"
@@ -1272,28 +1273,28 @@
                     </button>
                 `;
             });
-
+        
             content.innerHTML = html;
-
+        
             content.querySelectorAll(".quiz-option").forEach(button => {
                 button.addEventListener("click", function () {
                     if (answered) return;
-
+        
                     answered = true;
-
+        
                     const selected = Number(this.dataset.index);
                     const correct = item.answer;
-
+        
                     content.querySelectorAll(".quiz-option").forEach(
                         optionButton => {
                             optionButton.disabled = true;
-
+        
                             if (Number(optionButton.dataset.index) === correct) {
                                 optionButton.classList.add("correct-answer");
                             }
                         }
                     );
-
+        
                     if (selected === correct) {
                         score++;
                         feedback.innerHTML =
@@ -1303,9 +1304,9 @@
                             '<p class="wrong">Chưa chính xác! Đáp án đúng là ' +
                             String.fromCharCode(65 + correct) + '.</p>';
                     }
-
+        
                     nextButton.hidden = false;
-
+        
                     nextButton.textContent =
                         current === questions.length - 1
                             ? "Xem kết quả"
@@ -1313,36 +1314,37 @@
                 });
             });
         }
-
+        
         nextButton.addEventListener("click", function () {
             if (!answered) return;
-
+        
             current++;
-
+        
             if (current < questions.length) {
                 showQuestion();
             } else {
                 content.innerHTML = "";
                 progress.textContent = "Hoàn thành bài trắc nghiệm!";
                 feedback.innerHTML = "";
-
+        
                 nextButton.hidden = true;
                 restartButton.hidden = false;
-
+        
                 result.innerHTML =
                     "<h3>Bạn trả lời đúng " + score + "/10 câu!</h3>" +
                     "<p>Điểm số: " + (score * 10) + "/100</p>";
             }
         });
-
+        
         restartButton.addEventListener("click", function () {
             current = 0;
             score = 0;
             restartButton.hidden = true;
             showQuestion();
         });
-
+        
         showQuestion();
+
 
     </script>
 
